@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cavcrosby-autotag"
-version = "1.0.0"
+version = "1.0.1"
 description = "Framework for automating the creation of git tags"
 authors = ["Conner Crosby <conner@cavcrosby.tech>"]
 license = "MIT"

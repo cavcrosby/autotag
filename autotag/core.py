@@ -59,7 +59,6 @@ def run(cmd_args, update_policy):
 
     """
     repo = git.Repo(os.getcwd(), search_parent_directories=True)
-    repo_working_dir = repo.working_tree_dir
 
     # Stringifying each tagref then sorting the list to grab the latest tagref.
     # For example, assume that:
@@ -78,7 +77,7 @@ def run(cmd_args, update_policy):
 
     # the 'R' kwargs parameter swaps both sides of a diff
     patch = repo.head.commit.diff("HEAD~1", create_patch=True, R=True)
-    repo_update_types = update_policy(patch, repo_working_dir)
+    repo_update_types = update_policy(patch, repo.working_tree_dir)
 
     greatest_repo_update_type = SemanticVersion.determine_greatest_update_type(
         repo_update_types
