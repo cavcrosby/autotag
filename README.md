@@ -1,0 +1,5 @@
+# autotag
+
+## License
+
+See LICENSE.
